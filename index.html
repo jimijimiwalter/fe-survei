@@ -1,0 +1,183 @@
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+
+<body>
+    <script>
+        function login() {
+            const uri = 'http://localhost:8000/login/admin';
+            const initDetails = {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                mode: "cors",
+                body: JSON.stringify({
+                    "id": "superadmin",
+                    "password": "superadmin"
+                }),
+                credentials: "include",
+            }
+
+            fetch(uri, initDetails)
+                .then(response => {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    console.log(response.headers.get("Content-Type"));
+                    return response.json();
+                }
+                )
+                .then(myJson => {
+                    console.log(JSON.stringify(myJson));
+                    console.log(document.cookie)
+                })
+                .catch(err => {
+                    console.log('Fetch Error :-S', err);
+                });
+        }
+
+        function dosen() {
+            const uri = 'http://localhost:8000/dosen';
+            const initDetails = {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                    "Access-Control-Allow-Credentials": true,
+                },
+                mode: "cors",
+                credentials: "include"
+            }
+
+            fetch(uri, initDetails)
+                .then(response => {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    console.log(response.headers.get("Content-Type"));
+                    return response.json();
+                }
+                )
+                .then(myJson => {
+                    console.log(JSON.stringify(myJson));
+                })
+                .catch(err => {
+                    console.log('Fetch Error :-S', err);
+                });
+        }
+
+        function loginrailway() {
+            const uri = 'https://survei.up.railway.app/login/admin';
+            const initDetails = {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                mode: "cors",
+                body: JSON.stringify({
+                    "id": "superadmin",
+                    "password": "superadmin"
+                }),
+                credentials: "include",
+            }
+
+            fetch(uri, initDetails)
+                .then(response => {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    console.log(response.headers.get("Content-Type"));
+                    return response.json();
+                }
+                )
+                .then(myJson => {
+                    console.log(JSON.stringify(myJson));
+                    console.log(document.cookie)
+                })
+                .catch(err => {
+                    console.log('Fetch Error :-S', err);
+                });
+        }
+
+        function dosenrailway() {
+            const uri = 'https://survei.up.railway.app/dosen';
+            const initDetails = {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                    "Access-Control-Allow-Credentials": true,
+                },
+                mode: "cors",
+                credentials: "include"
+            }
+
+            fetch(uri, initDetails)
+                .then(response => {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    console.log(response.headers.get("Content-Type"));
+                    return response.json();
+                }
+                )
+                .then(myJson => {
+                    console.log(JSON.stringify(myJson));
+                })
+                .catch(err => {
+                    console.log('Fetch Error :-S', err);
+                });
+        }
+
+        function tester() {
+            const uri = 'http://localhost:8081/';
+            const initDetails = {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                },
+                mode: "cors",
+                credentials: "include"
+            }
+
+            fetch(uri, initDetails)
+                .then(response => {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    console.log(response.headers.get("Content-Type"));
+                    return response.json();
+                }
+                )
+                .then(myJson => {
+                    console.log(JSON.stringify(myJson));
+                })
+                .catch(err => {
+                    console.log('Fetch Error :-S', err);
+                });
+        }
+    </script>
+    <button id='login' onclick="login()">Login</button>
+    <button id='logout' onclick="dosen()">Dosen</button>
+    <button id='loginrailway' onclick="loginrailway()">Login railway</button>
+    <button id='logoutrailway' onclick="dosenrailway()">Dosen railway</button>
+    <button id='tester' onclick="tester()">tester</button>
+</body>
+
+</html>
